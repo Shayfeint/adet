@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<ADET_Group_12.Services.SmartQQueueService>();
 
 var app = builder.Build();
 

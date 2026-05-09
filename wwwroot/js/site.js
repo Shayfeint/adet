@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+(() => {
+  const appointmentInputs = document.querySelectorAll("[data-min-now]");
+  if (appointmentInputs.length === 0) {
+    return;
+  }
 
-// Write your JavaScript code.
+  const pad = (value) => value.toString().padStart(2, "0");
+  const toLocalInputValue = (date) => {
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  };
+
+  const minimumDate = new Date(Date.now() + 5 * 60 * 1000);
+  appointmentInputs.forEach((input) => {
+    input.min = toLocalInputValue(minimumDate);
+  });
+})();

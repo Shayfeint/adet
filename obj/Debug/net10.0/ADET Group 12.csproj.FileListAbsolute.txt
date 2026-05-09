@@ -1,0 +1,98 @@
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.AssemblyInfoInputs.cache
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.AssemblyInfo.cs
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.csproj.CoreCompileInputs.cache
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.RazorAssemblyInfo.cache
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.RazorAssemblyInfo.cs
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.sourcelink.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\appsettings.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\ADET Group 12.staticwebassets.runtime.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\ADET Group 12.staticwebassets.endpoints.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\ADET Group 12.exe
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\ADET Group 12.deps.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\ADET Group 12.runtimeconfig.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\ADET Group 12.dll
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\ADET Group 12.pdb
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\scopedcss\bundle\ADET Group 12.styles.css
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\scopedcss\projectbundle\ADET Group 12.bundle.scp.css
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\6hju8hc533-{0}-p8bc757hvg-p8bc757hvg.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\ziu20tc92o-{0}-61n19gt1b8-61n19gt1b8.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\mc2p1ni5kr-{0}-7c5fh9qeyv-7c5fh9qeyv.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\foxj78luf5-{0}-bqjiyaj88i-bqjiyaj88i.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\scbj9pdyb2-{0}-c2jlpeoesf-c2jlpeoesf.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\1ney7l8gcg-{0}-erw9l3u2r3-erw9l3u2r3.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\vyx9d3pdgj-{0}-aexeepp0ev-aexeepp0ev.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\w8h6825a5d-{0}-d7shbmvgxk-d7shbmvgxk.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\od15n5s788-{0}-ausgxo2sd3-ausgxo2sd3.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\9ocuvff7bt-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\qq7aigp4ca-{0}-cosvhxvwiu-cosvhxvwiu.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\179l89euuw-{0}-ub07r2b239-ub07r2b239.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\c6pq1f1h6c-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\h01nuboiz6-{0}-b7pk76d08c-b7pk76d08c.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\z3zx64d35k-{0}-fsbi9cje9m-fsbi9cje9m.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\5xbhn54mwy-{0}-rzd6atqjts-rzd6atqjts.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\22s1wznj7r-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\j9c70itb0k-{0}-dxx9fxp4il-dxx9fxp4il.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\z70ap3t2u8-{0}-jd9uben2k1-jd9uben2k1.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\sht1un0k1r-{0}-khv3u5hwcm-khv3u5hwcm.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\tkv6svbxe0-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\e5jbtcixo2-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\8gpg4og5km-{0}-c2oey78nd0-c2oey78nd0.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\5bgbe4xpst-{0}-tdbxkamptv-tdbxkamptv.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\tc1zbuad44-{0}-j5mq2jizvt-j5mq2jizvt.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\ect1u7oxu5-{0}-06098lyss8-06098lyss8.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\20mqdh82ge-{0}-nvvlpmu67g-nvvlpmu67g.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\qo9dcrbwti-{0}-s35ty4nyc5-s35ty4nyc5.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\ngycr16n4c-{0}-pj5nd1wqec-pj5nd1wqec.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\hg6mtst3oz-{0}-46ein0sx1k-46ein0sx1k.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\090evt3ng7-{0}-v0zj4ognzu-v0zj4ognzu.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\bpazuxvpmo-{0}-37tfw0ft22-37tfw0ft22.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\s84cbthu5f-{0}-hrwsygsryq-hrwsygsryq.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\fifo37wnrl-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\40l2kwou2j-{0}-ft3s53vfgj-ft3s53vfgj.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\33bx4qjexb-{0}-6cfz1n2cew-6cfz1n2cew.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\r18cqaoxsz-{0}-6pdc2jztkx-6pdc2jztkx.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\t7wn3fj5xr-{0}-493y06b0oq-493y06b0oq.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\k8253rsoz0-{0}-iovd86k7lj-iovd86k7lj.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\zagnrb3w5a-{0}-vr1egmr9el-vr1egmr9el.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\t154z5s6p8-{0}-kbrnm935zg-kbrnm935zg.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\e5kjtotfr7-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\mreb5ewks9-{0}-y7v9cxd14o-y7v9cxd14o.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\x9r51neccv-{0}-notf2xhcfb-notf2xhcfb.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\nkb9hx1pc5-{0}-h1s4sie4z3-h1s4sie4z3.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\ndi5dsszoq-{0}-63fj8s7r0e-63fj8s7r0e.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\vdd411fhcs-{0}-0j3bgjxly4-0j3bgjxly4.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\2sfyy4twni-{0}-47otxtyo56-47otxtyo56.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\tma2ooy4gr-{0}-4v8eqarkd7-4v8eqarkd7.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\edohrb17hu-{0}-356vix0kms-356vix0kms.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\7z6xs46zha-{0}-83jwlth58m-83jwlth58m.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\1kguoqdm5n-{0}-mrlpezrjn3-mrlpezrjn3.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\6djevy4jcl-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\fdrjnczftm-{0}-ag7o75518u-ag7o75518u.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\f1qdu2kfsa-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\ifmueojooi-{0}-0i3buxo5is-0i3buxo5is.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\gw7wu1cowb-{0}-o1o13a6vjx-o1o13a6vjx.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\4vys9jstgj-{0}-ttgo8qnofa-ttgo8qnofa.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\vkhalp9si3-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\ge2p8bn74u-{0}-muycvpuwrr-muycvpuwrr.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\bxdws0omii-{0}-87fc7y1x7t-87fc7y1x7t.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\jkpe7xldgq-{0}-mlv21k5csn-mlv21k5csn.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\hhincappp8-{0}-bc0ai34q3m-bc0ai34q3m.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\3jwnsm9igl-{0}-bc0ai34q3m-bc0ai34q3m.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.dll
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\refint\ADET Group 12.dll
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.pdb
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.genruntimeconfig.cache
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ref\ADET Group 12.dll
