@@ -6,51 +6,37 @@
 }
 
 <div class="auth-page">
-    <section class="auth-panel">
-        <div class="panel-heading">
-            <div>
-                <p class="eyebrow">Role-based access</p>
-                <h1>Sign in to SmartQ</h1>
-            </div>
+    <section class="auth-panel hero-auth">
+        <div class="auth-copy">
+            <p class="eyebrow">SmartQ Access</p>
+            <h1>Sign in</h1>
+            <p class="auth-subtitle">Use your customer account, or sign in as admin to manage the queue.</p>
         </div>
 
         <form asp-action="Login" asp-route-returnUrl="@returnUrl" method="post" class="form-grid auth-form">
             <div asp-validation-summary="ModelOnly" class="text-danger wide"></div>
 
             <div class="form-field wide">
-                <label asp-for="DisplayName">Name</label>
-                <input asp-for="DisplayName" class="form-control" maxlength="80" placeholder="Your name" />
-                <span asp-validation-for="DisplayName" class="text-danger"></span>
+                <label asp-for="Username"></label>
+                <input asp-for="Username" class="form-control" maxlength="30" autocomplete="username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
             </div>
 
             <div class="form-field wide">
-                <label asp-for="Role">Role</label>
-                <select asp-for="Role" class="form-select" id="roleSelect">
-                    <option value="@SmartQRoles.Customer">Customer</option>
-                    <option value="@SmartQRoles.ServiceProvider">Service provider</option>
-                </select>
-                <span asp-validation-for="Role" class="text-danger"></span>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" autocomplete="current-password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <div class="form-field wide">
-                <label asp-for="AccessCode">Service provider access code</label>
-                <input asp-for="AccessCode" class="form-control" maxlength="30" autocomplete="off" placeholder="provider123" />
-                <span asp-validation-for="AccessCode" class="text-danger"></span>
+            <div class="credential-card wide">
+                <strong>Admin</strong>
+                <span>Username: admin</span>
+                <span>Password: admin123</span>
             </div>
 
-            <div class="auth-role-grid wide">
-                <div class="role-card">
-                    <strong>Customer</strong>
-                    <span>Create tickets, book appointments, and monitor public queue status.</span>
-                </div>
-                <div class="role-card">
-                    <strong>Service provider</strong>
-                    <span>Call tickets, complete service, cancel queue entries, and view reports.</span>
-                </div>
-            </div>
-
-            <div class="form-actions wide">
-                <button type="submit" class="btn btn-primary">Continue</button>
+            <div class="form-actions wide auth-actions">
+                <a class="btn btn-outline-light" asp-action="Register" asp-route-returnUrl="@returnUrl">Create customer account</a>
+                <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
         </form>
     </section>

@@ -1,0 +1,53 @@
+@model RegisterInput
+
+@{
+    ViewData["Title"] = "Create Account";
+    var returnUrl = ViewData["ReturnUrl"] as string;
+}
+
+<div class="auth-page">
+    <section class="auth-panel hero-auth">
+        <div class="auth-copy">
+            <p class="eyebrow">Customer account</p>
+            <h1>Create account</h1>
+            <p class="auth-subtitle">Register as a customer to generate tickets and book appointments.</p>
+        </div>
+
+        <form asp-action="Register" asp-route-returnUrl="@returnUrl" method="post" class="form-grid auth-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger wide"></div>
+
+            <div class="form-field wide">
+                <label asp-for="DisplayName">Full name</label>
+                <input asp-for="DisplayName" class="form-control" maxlength="80" autocomplete="name" />
+                <span asp-validation-for="DisplayName" class="text-danger"></span>
+            </div>
+
+            <div class="form-field wide">
+                <label asp-for="Username"></label>
+                <input asp-for="Username" class="form-control" maxlength="30" autocomplete="username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-field">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" autocomplete="new-password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-field">
+                <label asp-for="ConfirmPassword">Confirm password</label>
+                <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-actions wide auth-actions">
+                <a class="btn btn-outline-light" asp-action="Login" asp-route-returnUrl="@returnUrl">Back to sign in</a>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

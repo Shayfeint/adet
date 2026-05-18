@@ -1,0 +1,11 @@
+[
+  {
+    "Id": 1,
+    "Username": "admin",
+    "NormalizedUsername": "ADMIN",
+    "DisplayName": "SmartQ Admin",
+    "PasswordHash": "100000.pazrve7RtB0DeMoIZ68YPg==.0ZCPhxrsmYPHAB7FA5W25KdwJSYqmCar4ZUBG9hmhxo=",
+    "Role": "Admin",
+    "CreatedAt": "2026-05-18T05:39:10.165734Z"
+  }
+]

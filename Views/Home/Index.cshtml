@@ -4,8 +4,8 @@
     ViewData["Title"] = "SmartQ Dashboard";
     var defaultAppointment = DateTime.Now.AddHours(1).ToString("yyyy-MM-ddTHH:mm");
     var isCustomer = User.IsInRole(SmartQRoles.Customer);
-    var isProvider = User.IsInRole(SmartQRoles.ServiceProvider);
-    var roleLabel = isProvider ? "Service provider" : "Customer";
+    var isAdmin = User.IsInRole(SmartQRoles.Admin);
+    var roleLabel = isAdmin ? "Admin" : "Customer";
 }
 
 <div class="smartq-page">
@@ -177,13 +177,13 @@
         </section>
     }
 
-    @if (isProvider)
+    @if (isAdmin)
     {
         <section class="smartq-grid provider-grid">
             <div class="panel next-panel">
                 <div class="panel-heading">
                     <div>
-                        <p class="eyebrow">Staff</p>
+                        <p class="eyebrow">Admin console</p>
                         <h2>Call Queue</h2>
                     </div>
                 </div>
@@ -255,7 +255,7 @@
                 <p class="eyebrow">Live queue</p>
                 <h2>Waiting Tickets</h2>
             </div>
-            <span class="panel-count">@(isProvider ? "Provider view" : "Public view")</span>
+            <span class="panel-count">@(isAdmin ? "Admin view" : "Public view")</span>
         </div>
 
         @if (Model.WaitingTickets.Count == 0)
@@ -270,14 +270,14 @@
                         <tr>
                             <th>Position</th>
                             <th>Ticket</th>
-                            @if (isProvider)
+                            @if (isAdmin)
                             {
                                 <th>Customer</th>
                             }
                             <th>Category</th>
                             <th>Service</th>
                             <th>ETA</th>
-                            @if (isProvider)
+                            @if (isAdmin)
                             {
                                 <th></th>
                             }
@@ -289,7 +289,7 @@
                             <tr>
                                 <td><span class="position">@ticket.Position</span></td>
                                 <td><strong>@ticket.Number</strong></td>
-                                @if (isProvider)
+                                @if (isAdmin)
                                 {
                                     <td>
                                         @ticket.CustomerName
@@ -304,7 +304,7 @@
                                 </td>
                                 <td>@ticket.ServiceName</td>
                                 <td>@(ticket.EstimatedWaitMinutes == 0 ? "Now" : $"{ticket.EstimatedWaitMinutes} min")</td>
-                                @if (isProvider)
+                                @if (isAdmin)
                                 {
                                     <td>
                                         <form asp-action="CancelTicket" method="post" class="inline-form">
@@ -321,7 +321,7 @@
         }
     </section>
 
-    @if (isProvider)
+    @if (isAdmin)
     {
         <section class="two-column">
             <div class="panel">

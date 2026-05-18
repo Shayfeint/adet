@@ -66,7 +66,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    [Authorize(Roles = SmartQRoles.ServiceProvider)]
+    [Authorize(Roles = SmartQRoles.Admin)]
     [ValidateAntiForgeryToken]
     public IActionResult CallNext(string? serviceCode)
     {
@@ -81,7 +81,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    [Authorize(Roles = SmartQRoles.ServiceProvider)]
+    [Authorize(Roles = SmartQRoles.Admin)]
     [ValidateAntiForgeryToken]
     public IActionResult CompleteTicket(int id)
     {
@@ -95,7 +95,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    [Authorize(Roles = SmartQRoles.ServiceProvider)]
+    [Authorize(Roles = SmartQRoles.Admin)]
     [ValidateAntiForgeryToken]
     public IActionResult CancelTicket(int id)
     {

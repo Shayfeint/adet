@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using ADET_Group_12.Models;
+using ADET_Group_12.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -9,7 +10,12 @@ namespace ADET_Group_12.Controllers;
 
 public sealed class AuthController : Controller
 {
-    private const string ProviderAccessCode = "provider123";
+    private readonly SmartQUserStore _userStore;
+
+    public AuthController(SmartQUserStore userStore)
+    {
+        _userStore = userStore;
+    }
 
     [AllowAnonymous]
     [HttpGet]
@@ -31,45 +37,58 @@ public sealed class AuthController : Controller
     {
         ViewData["ReturnUrl"] = returnUrl;
 
-        if (!SmartQRoles.IsSupported(input.Role))
+        if (!ModelState.IsValid)
         {
-            ModelState.AddModelError(nameof(input.Role), "Choose a valid role.");
+            return View(input);
         }
 
-        if (input.Role == SmartQRoles.ServiceProvider &&
-            !string.Equals(input.AccessCode, ProviderAccessCode, StringComparison.Ordinal))
+        var user = _userStore.ValidateCredentials(input.Username, input.Password);
+        if (user is null)
         {
-            ModelState.AddModelError(nameof(input.AccessCode), "Enter the service provider access code.");
+            ModelState.AddModelError(string.Empty, "Invalid username or password.");
+            return View(input);
         }
+
+        await SignInUser(user);
+        return RedirectToLocal(returnUrl);
+    }
+
+    [AllowAnonymous]
+    [HttpGet]
+    public IActionResult Register(string? returnUrl = null)
+    {
+        if (User.Identity?.IsAuthenticated == true)
+        {
+            return RedirectToLocal(returnUrl);
+        }
+
+        ViewData["ReturnUrl"] = returnUrl;
+        return View(new RegisterInput());
+    }
+
+    [AllowAnonymous]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Register(RegisterInput input, string? returnUrl = null)
+    {
+        ViewData["ReturnUrl"] = returnUrl;
 
         if (!ModelState.IsValid)
         {
             return View(input);
         }
 
-        var displayName = string.IsNullOrWhiteSpace(input.DisplayName)
-            ? SmartQRoles.ToDisplayName(input.Role)
-            : input.DisplayName.Trim();
-
-        var claims = new List<Claim>
+        try
         {
-            new(ClaimTypes.Name, displayName),
-            new(ClaimTypes.Role, input.Role)
-        };
-
-        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-        var principal = new ClaimsPrincipal(identity);
-
-        await HttpContext.SignInAsync(
-            CookieAuthenticationDefaults.AuthenticationScheme,
-            principal,
-            new AuthenticationProperties
-            {
-                IsPersistent = true,
-                ExpiresUtc = DateTimeOffset.UtcNow.AddHours(8)
-            });
-
-        return RedirectToLocal(returnUrl);
+            var user = _userStore.CreateCustomer(input);
+            await SignInUser(user);
+            return RedirectToLocal(returnUrl);
+        }
+        catch (InvalidOperationException exception)
+        {
+            ModelState.AddModelError(nameof(input.Username), exception.Message);
+            return View(input);
+        }
     }
 
     [Authorize]
@@ -86,6 +105,29 @@ public sealed class AuthController : Controller
     public IActionResult AccessDenied()
     {
         return View();
+    }
+
+    private async Task SignInUser(AuthenticatedUser user)
+    {
+        var claims = new List<Claim>
+        {
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new(ClaimTypes.Name, user.DisplayName),
+            new(ClaimTypes.Role, user.Role),
+            new("Username", user.Username)
+        };
+
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+
+        await HttpContext.SignInAsync(
+            CookieAuthenticationDefaults.AuthenticationScheme,
+            principal,
+            new AuthenticationProperties
+            {
+                IsPersistent = true,
+                ExpiresUtc = DateTimeOffset.UtcNow.AddHours(8)
+            });
     }
 
     private IActionResult RedirectToLocal(string? returnUrl)

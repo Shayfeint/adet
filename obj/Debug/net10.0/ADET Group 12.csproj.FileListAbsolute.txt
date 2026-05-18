@@ -95,4 +95,5 @@ C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\refint\ADET Grou
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.pdb
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.genruntimeconfig.cache
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ref\ADET Group 12.dll
-C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\6hju8hc533-{0}-dm797zq5t3-dm797zq5t3.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\6hju8hc533-{0}-q8z61l8x73-q8z61l8x73.gz
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\bin\Debug\net10.0\App_Data\smartq-users.json
