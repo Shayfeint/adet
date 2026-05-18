@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ADET Group 12")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e52ab91361d81c37d6881808f9f0789fdc6e683e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bee8c36564effc792ee0b4dfa0a998153729c2f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("ADET Group 12")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ADET Group 12")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

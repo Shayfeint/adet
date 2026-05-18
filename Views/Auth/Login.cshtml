@@ -1,0 +1,61 @@
+@model LoginInput
+
+@{
+    ViewData["Title"] = "Sign in";
+    var returnUrl = ViewData["ReturnUrl"] as string;
+}
+
+<div class="auth-page">
+    <section class="auth-panel">
+        <div class="panel-heading">
+            <div>
+                <p class="eyebrow">Role-based access</p>
+                <h1>Sign in to SmartQ</h1>
+            </div>
+        </div>
+
+        <form asp-action="Login" asp-route-returnUrl="@returnUrl" method="post" class="form-grid auth-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger wide"></div>
+
+            <div class="form-field wide">
+                <label asp-for="DisplayName">Name</label>
+                <input asp-for="DisplayName" class="form-control" maxlength="80" placeholder="Your name" />
+                <span asp-validation-for="DisplayName" class="text-danger"></span>
+            </div>
+
+            <div class="form-field wide">
+                <label asp-for="Role">Role</label>
+                <select asp-for="Role" class="form-select" id="roleSelect">
+                    <option value="@SmartQRoles.Customer">Customer</option>
+                    <option value="@SmartQRoles.ServiceProvider">Service provider</option>
+                </select>
+                <span asp-validation-for="Role" class="text-danger"></span>
+            </div>
+
+            <div class="form-field wide">
+                <label asp-for="AccessCode">Service provider access code</label>
+                <input asp-for="AccessCode" class="form-control" maxlength="30" autocomplete="off" placeholder="provider123" />
+                <span asp-validation-for="AccessCode" class="text-danger"></span>
+            </div>
+
+            <div class="auth-role-grid wide">
+                <div class="role-card">
+                    <strong>Customer</strong>
+                    <span>Create tickets, book appointments, and monitor public queue status.</span>
+                </div>
+                <div class="role-card">
+                    <strong>Service provider</strong>
+                    <span>Call tickets, complete service, cancel queue entries, and view reports.</span>
+                </div>
+            </div>
+
+            <div class="form-actions wide">
+                <button type="submit" class="btn btn-primary">Continue</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

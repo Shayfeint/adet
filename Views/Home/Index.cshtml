@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "SmartQ Dashboard";
     var defaultAppointment = DateTime.Now.AddHours(1).ToString("yyyy-MM-ddTHH:mm");
+    var isCustomer = User.IsInRole(SmartQRoles.Customer);
+    var isProvider = User.IsInRole(SmartQRoles.ServiceProvider);
+    var roleLabel = isProvider ? "Service provider" : "Customer";
 }
 
 <div class="smartq-page">
@@ -11,9 +14,15 @@
             <p class="eyebrow">Intelligent queue and appointment management</p>
             <h1>SmartQ</h1>
         </div>
-        <div class="refresh-status">
-            <span>Updated</span>
-            <strong data-local-time>@Model.GeneratedAt.ToString("h:mm tt")</strong>
+        <div class="topbar-actions">
+            <div class="refresh-status">
+                <span>@roleLabel</span>
+                <strong>@User.Identity?.Name</strong>
+            </div>
+            <div class="refresh-status">
+                <span>Updated</span>
+                <strong data-local-time>@Model.GeneratedAt.ToString("h:mm tt")</strong>
+            </div>
         </div>
     </section>
 
@@ -47,100 +56,130 @@
         </div>
     </section>
 
-    <section class="smartq-grid">
-        <div class="smartq-stack">
-            <div class="panel">
-                <div class="panel-heading">
-                    <div>
-                        <p class="eyebrow">Customer</p>
-                        <h2>Digital Ticket</h2>
+    @if (isCustomer)
+    {
+        <section class="smartq-grid customer-grid">
+            <div class="smartq-stack">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Customer</p>
+                            <h2>Digital Ticket</h2>
+                        </div>
+                        <span class="panel-count">Walk-in</span>
                     </div>
-                    <span class="panel-count">Walk-in</span>
+
+                    <form asp-action="CreateTicket" method="post" class="form-grid">
+                        <div class="form-field wide">
+                            <label for="ticketCustomerName">Customer name</label>
+                            <input id="ticketCustomerName" name="CustomerName" class="form-control" maxlength="80" value="@User.Identity?.Name" required />
+                        </div>
+                        <div class="form-field">
+                            <label for="ticketContactNumber">Contact number</label>
+                            <input id="ticketContactNumber" name="ContactNumber" class="form-control" maxlength="30" />
+                        </div>
+                        <div class="form-field">
+                            <label for="ticketServiceCode">Service</label>
+                            <select id="ticketServiceCode" name="ServiceCode" class="form-select" required>
+                                @foreach (var service in Model.Services)
+                                {
+                                    <option value="@service.Code">@service.Name (@service.AverageMinutes min)</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="ticketCategory">Category</label>
+                            <select id="ticketCategory" name="Category" class="form-select">
+                                <option value="@CustomerCategory.Regular">Regular</option>
+                                <option value="@CustomerCategory.SeniorCitizen">Senior citizen</option>
+                                <option value="@CustomerCategory.Pwd">PWD</option>
+                                <option value="@CustomerCategory.Pregnant">Pregnant</option>
+                                <option value="@CustomerCategory.Emergency">Emergency</option>
+                            </select>
+                        </div>
+                        <div class="form-actions wide">
+                            <button type="submit" class="btn btn-primary">Generate Ticket</button>
+                        </div>
+                    </form>
                 </div>
 
-                <form asp-action="CreateTicket" method="post" class="form-grid">
-                    <div class="form-field wide">
-                        <label for="ticketCustomerName">Customer name</label>
-                        <input id="ticketCustomerName" name="CustomerName" class="form-control" maxlength="80" required />
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Schedule</p>
+                            <h2>Book Appointment</h2>
+                        </div>
                     </div>
-                    <div class="form-field">
-                        <label for="ticketContactNumber">Contact number</label>
-                        <input id="ticketContactNumber" name="ContactNumber" class="form-control" maxlength="30" />
-                    </div>
-                    <div class="form-field">
-                        <label for="ticketServiceCode">Service</label>
-                        <select id="ticketServiceCode" name="ServiceCode" class="form-select" required>
-                            @foreach (var service in Model.Services)
-                            {
-                                <option value="@service.Code">@service.Name (@service.AverageMinutes min)</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="form-field">
-                        <label for="ticketCategory">Category</label>
-                        <select id="ticketCategory" name="Category" class="form-select">
-                            <option value="@CustomerCategory.Regular">Regular</option>
-                            <option value="@CustomerCategory.SeniorCitizen">Senior citizen</option>
-                            <option value="@CustomerCategory.Pwd">PWD</option>
-                            <option value="@CustomerCategory.Pregnant">Pregnant</option>
-                            <option value="@CustomerCategory.Emergency">Emergency</option>
-                        </select>
-                    </div>
-                    <div class="form-actions wide">
-                        <button type="submit" class="btn btn-primary">Generate Ticket</button>
-                    </div>
-                </form>
-            </div>
 
-            <div class="panel">
-                <div class="panel-heading">
-                    <div>
-                        <p class="eyebrow">Schedule</p>
-                        <h2>Book Appointment</h2>
-                    </div>
-                    <span class="panel-count">@Model.Appointments.Count booked</span>
+                    <form asp-action="BookAppointment" method="post" class="form-grid">
+                        <div class="form-field wide">
+                            <label for="appointmentCustomerName">Customer name</label>
+                            <input id="appointmentCustomerName" name="CustomerName" class="form-control" maxlength="80" value="@User.Identity?.Name" required />
+                        </div>
+                        <div class="form-field">
+                            <label for="appointmentContactNumber">Contact number</label>
+                            <input id="appointmentContactNumber" name="ContactNumber" class="form-control" maxlength="30" />
+                        </div>
+                        <div class="form-field">
+                            <label for="appointmentServiceCode">Service</label>
+                            <select id="appointmentServiceCode" name="ServiceCode" class="form-select" required>
+                                @foreach (var service in Model.Services)
+                                {
+                                    <option value="@service.Code">@service.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="appointmentCategory">Category</label>
+                            <select id="appointmentCategory" name="Category" class="form-select">
+                                <option value="@CustomerCategory.Regular">Regular</option>
+                                <option value="@CustomerCategory.SeniorCitizen">Senior citizen</option>
+                                <option value="@CustomerCategory.Pwd">PWD</option>
+                                <option value="@CustomerCategory.Pregnant">Pregnant</option>
+                                <option value="@CustomerCategory.Emergency">Emergency</option>
+                            </select>
+                        </div>
+                        <div class="form-field wide">
+                            <label for="appointmentAt">Appointment time</label>
+                            <input id="appointmentAt" name="AppointmentAt" type="datetime-local" class="form-control" value="@defaultAppointment" data-min-now required />
+                        </div>
+                        <div class="form-actions wide">
+                            <button type="submit" class="btn btn-secondary">Book Appointment</button>
+                        </div>
+                    </form>
                 </div>
-
-                <form asp-action="BookAppointment" method="post" class="form-grid">
-                    <div class="form-field wide">
-                        <label for="appointmentCustomerName">Customer name</label>
-                        <input id="appointmentCustomerName" name="CustomerName" class="form-control" maxlength="80" required />
-                    </div>
-                    <div class="form-field">
-                        <label for="appointmentContactNumber">Contact number</label>
-                        <input id="appointmentContactNumber" name="ContactNumber" class="form-control" maxlength="30" />
-                    </div>
-                    <div class="form-field">
-                        <label for="appointmentServiceCode">Service</label>
-                        <select id="appointmentServiceCode" name="ServiceCode" class="form-select" required>
-                            @foreach (var service in Model.Services)
-                            {
-                                <option value="@service.Code">@service.Name</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="form-field">
-                        <label for="appointmentCategory">Category</label>
-                        <select id="appointmentCategory" name="Category" class="form-select">
-                            <option value="@CustomerCategory.Regular">Regular</option>
-                            <option value="@CustomerCategory.SeniorCitizen">Senior citizen</option>
-                            <option value="@CustomerCategory.Pwd">PWD</option>
-                            <option value="@CustomerCategory.Pregnant">Pregnant</option>
-                            <option value="@CustomerCategory.Emergency">Emergency</option>
-                        </select>
-                    </div>
-                    <div class="form-field wide">
-                        <label for="appointmentAt">Appointment time</label>
-                        <input id="appointmentAt" name="AppointmentAt" type="datetime-local" class="form-control" value="@defaultAppointment" data-min-now required />
-                    </div>
-                    <div class="form-actions wide">
-                        <button type="submit" class="btn btn-secondary">Book Appointment</button>
-                    </div>
-                </form>
             </div>
-        </div>
 
-        <aside class="smartq-stack">
+            <aside class="smartq-stack">
+                <div class="panel next-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Queue status</p>
+                            <h2>Next Ticket</h2>
+                        </div>
+                    </div>
+
+                    @if (Model.NextTicket is null)
+                    {
+                        <div class="empty-state">No waiting tickets</div>
+                    }
+                    else
+                    {
+                        <div class="next-ticket">
+                            <span>@Model.NextTicket.Number</span>
+                            <strong>@Model.NextTicket.ServiceName</strong>
+                            <small>@Model.NextTicket.CategoryLabel</small>
+                            <small>@(Model.NextTicket.EstimatedWaitMinutes == 0 ? "Now" : $"{Model.NextTicket.EstimatedWaitMinutes} min")</small>
+                        </div>
+                    }
+                </div>
+            </aside>
+        </section>
+    }
+
+    @if (isProvider)
+    {
+        <section class="smartq-grid provider-grid">
             <div class="panel next-panel">
                 <div class="panel-heading">
                     <div>
@@ -207,8 +246,8 @@
                     </div>
                 }
             </div>
-        </aside>
-    </section>
+        </section>
+    }
 
     <section class="panel queue-panel">
         <div class="panel-heading">
@@ -216,6 +255,7 @@
                 <p class="eyebrow">Live queue</p>
                 <h2>Waiting Tickets</h2>
             </div>
+            <span class="panel-count">@(isProvider ? "Provider view" : "Public view")</span>
         </div>
 
         @if (Model.WaitingTickets.Count == 0)
@@ -230,11 +270,17 @@
                         <tr>
                             <th>Position</th>
                             <th>Ticket</th>
-                            <th>Customer</th>
+                            @if (isProvider)
+                            {
+                                <th>Customer</th>
+                            }
                             <th>Category</th>
                             <th>Service</th>
                             <th>ETA</th>
-                            <th></th>
+                            @if (isProvider)
+                            {
+                                <th></th>
+                            }
                         </tr>
                     </thead>
                     <tbody>
@@ -243,24 +289,30 @@
                             <tr>
                                 <td><span class="position">@ticket.Position</span></td>
                                 <td><strong>@ticket.Number</strong></td>
-                                <td>
-                                    @ticket.CustomerName
-                                    @if (!string.IsNullOrWhiteSpace(ticket.ContactNumber))
-                                    {
-                                        <small>@ticket.ContactNumber</small>
-                                    }
-                                </td>
+                                @if (isProvider)
+                                {
+                                    <td>
+                                        @ticket.CustomerName
+                                        @if (!string.IsNullOrWhiteSpace(ticket.ContactNumber))
+                                        {
+                                            <small>@ticket.ContactNumber</small>
+                                        }
+                                    </td>
+                                }
                                 <td>
                                     <span class="badge-soft @(ticket.IsPriority ? "priority" : "")">@ticket.CategoryLabel</span>
                                 </td>
                                 <td>@ticket.ServiceName</td>
                                 <td>@(ticket.EstimatedWaitMinutes == 0 ? "Now" : $"{ticket.EstimatedWaitMinutes} min")</td>
-                                <td>
-                                    <form asp-action="CancelTicket" method="post" class="inline-form">
-                                        <input type="hidden" name="id" value="@ticket.Id" />
-                                        <button type="submit" class="btn btn-sm btn-outline-danger">Cancel</button>
-                                    </form>
-                                </td>
+                                @if (isProvider)
+                                {
+                                    <td>
+                                        <form asp-action="CancelTicket" method="post" class="inline-form">
+                                            <input type="hidden" name="id" value="@ticket.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">Cancel</button>
+                                        </form>
+                                    </td>
+                                }
                             </tr>
                         }
                     </tbody>
@@ -269,71 +321,75 @@
         }
     </section>
 
-    <section class="two-column">
-        <div class="panel">
-            <div class="panel-heading">
-                <div>
-                    <p class="eyebrow">Calendar</p>
-                    <h2>Upcoming Appointments</h2>
+    @if (isProvider)
+    {
+        <section class="two-column">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Calendar</p>
+                        <h2>Upcoming Appointments</h2>
+                    </div>
+                    <span class="panel-count">@Model.Appointments.Count booked</span>
                 </div>
+
+                @if (Model.Appointments.Count == 0)
+                {
+                    <div class="empty-state">No scheduled appointments</div>
+                }
+                else
+                {
+                    <div class="ticket-list">
+                        @foreach (var ticket in Model.Appointments)
+                        {
+                            <article class="ticket-row">
+                                <div>
+                                    <strong>@ticket.Number</strong>
+                                    <span>@ticket.CustomerName</span>
+                                    <small>@ticket.ServiceName</small>
+                                </div>
+                                <div class="ticket-meta">
+                                    <span>@ticket.ScheduledAt?.ToString("MMM d, h:mm tt")</span>
+                                    <small>@ticket.EstimatedWaitMinutes min</small>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                }
             </div>
 
-            @if (Model.Appointments.Count == 0)
-            {
-                <div class="empty-state">No scheduled appointments</div>
-            }
-            else
-            {
-                <div class="ticket-list">
-                    @foreach (var ticket in Model.Appointments)
-                    {
-                        <article class="ticket-row">
-                            <div>
-                                <strong>@ticket.Number</strong>
-                                <span>@ticket.CustomerName</span>
-                                <small>@ticket.ServiceName</small>
-                            </div>
-                            <div class="ticket-meta">
-                                <span>@ticket.ScheduledAt?.ToString("MMM d, h:mm tt")</span>
-                                <small>@ticket.EstimatedWaitMinutes min</small>
-                            </div>
-                        </article>
-                    }
+            <div class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Monitoring</p>
+                        <h2>Queue History</h2>
+                    </div>
                 </div>
-            }
-        </div>
 
-        <div class="panel">
-            <div class="panel-heading">
-                <div>
-                    <p class="eyebrow">Monitoring</p>
-                    <h2>Queue History</h2>
-                </div>
+                @if (Model.QueueHistory.Count == 0)
+                {
+                    <div class="empty-state">No completed tickets yet</div>
+                }
+                else
+                {
+                    <div class="ticket-list">
+                        @foreach (var ticket in Model.QueueHistory)
+                        {
+                            <article class="ticket-row">
+                                <div>
+                                    <strong>@ticket.Number</strong>
+                                    <span>@ticket.CustomerName</span>
+                                    <small>@ticket.ServiceName</small>
+                                </div>
+                                <div class="ticket-meta">
+                                    <span>@ticket.StatusLabel</span>
+                                    <small>@ticket.CompletedAt?.ToString("h:mm tt")</small>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                }
             </div>
-
-            @if (Model.QueueHistory.Count == 0)
-            {
-                <div class="empty-state">No completed tickets yet</div>
-            }
-            else
-            {
-                <div class="ticket-list">
-                    @foreach (var ticket in Model.QueueHistory)
-                    {
-                        <article class="ticket-row">
-                            <div>
-                                <strong>@ticket.Number</strong>
-                                <span>@ticket.CustomerName</span>
-                                <small>@ticket.ServiceName</small>
-                            </div>
-                            <div class="ticket-meta">
-                                <span>@ticket.StatusLabel</span>
-                                <small>@ticket.CompletedAt?.ToString("h:mm tt")</small>
-                            </div>
-                        </article>
-                    }
-                </div>
-            }
-        </div>
-    </section>
+        </section>
+    }
 </div>

@@ -22,7 +22,6 @@ C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\rjsmcshtml.dswa.
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\scopedcss\bundle\ADET Group 12.styles.css
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\scopedcss\projectbundle\ADET Group 12.bundle.scp.css
-C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\6hju8hc533-{0}-p8bc757hvg-p8bc757hvg.gz
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\ziu20tc92o-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\mc2p1ni5kr-{0}-7c5fh9qeyv-7c5fh9qeyv.gz
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\foxj78luf5-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -96,3 +95,4 @@ C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\refint\ADET Grou
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.pdb
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ADET Group 12.genruntimeconfig.cache
 C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\ref\ADET Group 12.dll
+C:\Users\Shay\MvcMovie\ADET_G12\ADET Group 12\obj\Debug\net10.0\compressed\6hju8hc533-{0}-dm797zq5t3-dm797zq5t3.gz

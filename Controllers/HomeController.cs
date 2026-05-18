@@ -1,10 +1,12 @@
 using System.Diagnostics;
 using ADET_Group_12.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ADET_Group_12.Models;
 
 namespace ADET_Group_12.Controllers;
 
+[Authorize]
 public class HomeController : Controller
 {
     private readonly SmartQQueueService _queueService;
@@ -21,12 +23,14 @@ public class HomeController : Controller
             TempData["FlashTone"] as string));
     }
 
+    [AllowAnonymous]
     public IActionResult Privacy()
     {
         return View();
     }
 
     [HttpPost]
+    [Authorize(Roles = SmartQRoles.Customer)]
     [ValidateAntiForgeryToken]
     public IActionResult CreateTicket(TicketInput input)
     {
@@ -44,6 +48,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
+    [Authorize(Roles = SmartQRoles.Customer)]
     [ValidateAntiForgeryToken]
     public IActionResult BookAppointment(AppointmentInput input)
     {
@@ -61,6 +66,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
+    [Authorize(Roles = SmartQRoles.ServiceProvider)]
     [ValidateAntiForgeryToken]
     public IActionResult CallNext(string? serviceCode)
     {
@@ -75,6 +81,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
+    [Authorize(Roles = SmartQRoles.ServiceProvider)]
     [ValidateAntiForgeryToken]
     public IActionResult CompleteTicket(int id)
     {
@@ -88,6 +95,7 @@ public class HomeController : Controller
     }
 
     [HttpPost]
+    [Authorize(Roles = SmartQRoles.ServiceProvider)]
     [ValidateAntiForgeryToken]
     public IActionResult CancelTicket(int id)
     {
@@ -107,6 +115,7 @@ public class HomeController : Controller
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [AllowAnonymous]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
